@@ -9,44 +9,43 @@ import { Page404 } from '../Page404'
 export const Router = () => {
     return (
         <Routes>
-          <Route exact path="/">
-            <Home />
+          <Route exact path="/" element={<Home/>}>
           </Route>
           <Route 
             path="/page1" 
-            render={({match: {url}}) => (
+            element={
                 <Routes>
                   {page1Routes.map (route => (
+                      console.log(route.children),
                       <Route 
                           key={route.path}  
                           exact={route.exact} 
-                          path={`${url}${route.path}`}
+                          path={route.path}
+                          element={route.children}
                       >
-                          {route.children}
                       </Route>
                   ))}
                 </Routes>    
-                )}
+                }
           />
           
           <Route 
             path="/page2" 
-            render={({match: {url}}) => (
+            element={
                 <Routes>
                   {page2Routes.map (route => (
                       <Route 
                           key={route.path}  
                           exact={route.exact} 
-                          path={`${url}${route.path}`}
+                          path={route.path}
+                          element={route.children}
                       >
-                          {route.children}
                       </Route>
                   ))}
                 </Routes>    
-                )}
+                }
           />
-          <Route path="*">
-            <Page404 />
+          <Route path="*" element={<Page404 />}>
           </Route>
         </Routes>
     )
