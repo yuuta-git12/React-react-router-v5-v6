@@ -1,4 +1,4 @@
-import { Link, useHistory } from "react-router-dom/cjs/react-router-dom"
+import { Link,history } from "react-router-dom";
 
 export const Page1 = () => {
     // ページ遷移時に渡すデータ

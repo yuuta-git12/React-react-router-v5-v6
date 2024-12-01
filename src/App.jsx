@@ -2,7 +2,7 @@ import { useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 
-import { BrowserRouter,Link } from 'react-router-dom/cjs/react-router-dom'
+import { BrowserRouter,Link } from 'react-router-dom'
 
 import { Router } from './router/Router'
 

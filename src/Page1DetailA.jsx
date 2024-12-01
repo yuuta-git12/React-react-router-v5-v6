@@ -1,5 +1,5 @@
 // State取得時に必要なライブラリ
-import { useLocation, useHistory } from "react-router-dom/cjs/react-router-dom"
+import { useLocation,useHistory } from "react-router-dom";
 
 export const Page1DetailA = () => {
     const location = useLocation();
