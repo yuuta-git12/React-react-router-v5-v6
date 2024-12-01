@@ -1,5 +1,5 @@
 
-import { Switch,Route } from 'react-router-dom/cjs/react-router-dom'
+import { Routes,Route } from 'react-router-dom'
 
 import { Home } from '../Home'
 import { page1Routes } from './Page1Routes'
@@ -8,14 +8,14 @@ import { Page404 } from '../Page404'
 
 export const Router = () => {
     return (
-        <Switch>
+        <Routes>
           <Route exact path="/">
             <Home />
           </Route>
           <Route 
             path="/page1" 
             render={({match: {url}}) => (
-                <Switch>
+                <Routes>
                   {page1Routes.map (route => (
                       <Route 
                           key={route.path}  
@@ -25,14 +25,14 @@ export const Router = () => {
                           {route.children}
                       </Route>
                   ))}
-                </Switch>    
+                </Routes>    
                 )}
           />
           
           <Route 
             path="/page2" 
             render={({match: {url}}) => (
-                <Switch>
+                <Routes>
                   {page2Routes.map (route => (
                       <Route 
                           key={route.path}  
@@ -42,12 +42,12 @@ export const Router = () => {
                           {route.children}
                       </Route>
                   ))}
-                </Switch>    
+                </Routes>    
                 )}
           />
           <Route path="*">
             <Page404 />
           </Route>
-        </Switch>
+        </Routes>
     )
 }
