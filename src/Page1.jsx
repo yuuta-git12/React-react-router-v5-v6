@@ -1,13 +1,13 @@
-import { Link,history } from "react-router-dom";
+import { Link,useNavigate } from "react-router-dom";
 
 export const Page1 = () => {
     // ページ遷移時に渡すデータ
     const arr = [...Array(1000).keys()];
     console.log(arr);
 
-    const history = useHistory();
+    const navigate = useNavigate();
 
-    const onClickDetailA = () => history.push({ pathname: "/page1/detailA" ,state :arr});
+    const onClickDetailA = () => navigate({ pathname: "/page1/detailA" ,state :arr});
 
     return (
         <div>

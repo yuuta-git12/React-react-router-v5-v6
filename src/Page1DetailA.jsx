@@ -1,14 +1,14 @@
 // State取得時に必要なライブラリ
-import { useLocation,useHistory } from "react-router-dom";
+import { useLocation,useNavigate } from "react-router-dom";
 
 export const Page1DetailA = () => {
     const location = useLocation();
     console.log(location.state);
     const array = location.state;
 
-    const history = useHistory();
+    const navigate = useNavigate();
 
-    const onClickBack = () => history.goBack();
+    const onClickBack = () => navigate(-1);
 
     return (
         <div>
