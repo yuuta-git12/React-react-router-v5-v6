@@ -12,7 +12,7 @@ export const Router = () => {
           <Route exact path="/" element={<Home/>}>
           </Route>
           <Route 
-            path="/page1" 
+            path="page1*" 
             element={
                 <Routes>
                   {page1Routes.map (route => (
@@ -30,7 +30,7 @@ export const Router = () => {
           />
           
           <Route 
-            path="/page2" 
+            path="/page2*" 
             element={
                 <Routes>
                   {page2Routes.map (route => (
